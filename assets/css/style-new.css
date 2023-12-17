@@ -1,0 +1,521 @@
+
+.rtl{
+    direction: rtl;
+    font-family: 'Cairo', sans-serif !important;
+}
+/*=============================================
+	=    		 sidebar			      =
+=============================================*/
+.overlay{
+    opacity: 0;
+    background-color: #00000044;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: .5s;
+    z-index: -1;
+}
+.overlay.open{
+    opacity: 1;
+    z-index: 100;
+}
+.sidebar .sidebar-logo{
+    width: 80px ;
+    transition: .5s;
+}
+.sidebar.open .sidebar-logo{
+    width: 150px;
+}
+.sidebar a{
+    font-size: 16px !important;
+    color: #aa84d5 !important;
+}
+.sidebar a.active{
+    font-size: 17px !important;
+}
+.sidebar li{
+    display: flex;
+    align-items: center;
+}
+.sidebar li.active .icon{
+    background-color: #473080 !important;
+    color: #fff !important;
+}
+.sidebar .name-link{
+    display: none;
+    margin-inline-start: 10px;
+    transition: .5s;
+}
+.sidebar li.active .name-link{
+    color: #fff !important;
+}
+.sidebar.open .name-link{
+    display: block;
+}
+@media (max-width: 1199.98px) {
+    .sidebar li{
+        flex-direction: column;
+    }
+    .sidebar .name-link{
+        display: block;
+        font-size: 12px !important;
+        width: 100%;
+        margin-inline-start: 0;
+
+    }
+    .sidebar-icon ul li .icon {
+        width: 50px;
+        height: 40px;
+    }
+}
+/*=============================================
+	=    		 Header			      =
+=============================================*/
+header .logo{
+    position: relative;
+    margin-inline-end: 20px;
+}
+header .logo::before {
+	content: "";
+	position: absolute;
+	left: -10px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 4px;
+	height: 31px;
+	border-radius: 3px;
+	background: var(--header-form-border-color)
+}
+header .logo::after {
+	content: "";
+	position: absolute;
+	right: -10px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 4px;
+	height: 31px;
+	border-radius: 3px;
+	background: var(--header-form-border-color)
+}
+/*=============================================
+	=    		 Banner		      =
+=============================================*/
+.video-btn-element{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    cursor: pointer;
+}
+.video-btn-element .video-btn{
+    position: absolute;
+    z-index: 1;
+}
+.video-btn-element i{
+    position: absolute;
+    z-index: 2;
+    color: #000;
+}
+.video-btn{
+    -webkit-animation: rotate-animation 10s infinite linear;
+    -moz-animation: rotate-animation 10s infinite linear;
+    -o-animation: rotate-animation 10s infinite linear;
+    animation: rotate-animation 10s infinite linear;
+}
+.video-btn-element:hover .video-btn{
+    animation-play-state: paused;
+}
+@keyframes rotate-animation {
+    0% {
+      transform:rotate(0)
+    }
+    50% {
+      transform:rotate(180deg)
+    }
+    100% {
+      transform:rotate(360deg)
+    }
+  }
+/*=============================================
+	=    		 activity-table			      =
+=============================================*/
+#myTabContent tbody tr{
+    transition: .5s;
+}
+#myTabContent tbody tr:hover{
+    background-color: #473080 !important;
+}
+#myTabContent tbody tr td{
+    color: #fff;
+}
+
+/*=============================================
+	=    		canvas		      =
+=============================================*/
+#canv{
+    z-index: -1;
+    opacity: 0;
+    transition: 5s ease-in-out;
+}
+#canv.open{
+    z-index: 11111;
+    opacity: 1;
+}
+/*=============================================
+	=    		ticker		      =
+=============================================*/
+@-webkit-keyframes ticker {
+    0% {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      visibility: visible;
+    }
+  
+    100% {
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+  
+  @keyframes ticker2 {
+    0% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+      visibility: visible;
+    }
+  
+    100% {
+        -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .ticker-conatin{
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+  .ticker-wrap {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    overflow: hidden;
+    height: 4rem;
+    background-color: #49b0b3; 
+    padding-left: 100%;
+    box-sizing: content-box;
+    z-index: 100;
+    transform: rotateZ(-2.5deg);
+  }
+  .ticker-wrap .ticker {
+      display: flex;
+      align-items: center;
+      height: 4rem;
+      line-height: 4rem;  
+      white-space: nowrap;
+      box-sizing: content-box;
+  width: 100%;
+      -webkit-animation-iteration-count: infinite; 
+              animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+              animation-timing-function: linear;
+     -webkit-animation-name: ticker;
+             animation-name: ticker;
+      -webkit-animation-duration: 20s;
+              animation-duration: 20s;
+  
+    }
+    .ticker-wrap2 {
+        background-color: #6845ee; 
+        transform: rotateZ(3deg);
+        bottom: 104px;
+      }
+      .ticker-wrap2 .ticker {
+        -webkit-animation-iteration-count: infinite; 
+                animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+                animation-timing-function: linear;
+       -webkit-animation-name: ticker2;
+               animation-name: ticker2;
+        -webkit-animation-duration: 15s;
+                animation-duration: 15s;
+    
+      }
+      
+    .ticker-wrap .ticker .ticker__item {
+      display: inline-block;
+      padding: 0 2rem;
+      font-size: 1.5rem;
+      color: white;  
+    }
+
+/*=============================================
+	=    		whatsapp		      =
+=============================================*/
+
+
+    @keyframes fade-in {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      
+      @keyframes drop {
+        0% {
+          bottom: 0px;
+          opacity: 1;
+        }
+        
+        80% {
+          opacity: 1;
+        }
+        
+        100% {
+          opacity: 1;
+          bottom: -200px;
+        }
+      }
+      
+      @keyframes wave {
+        0% {
+          background-position: 0 160px;
+          background-size: 170px 300px;
+        }
+        
+        100% {
+          background-position: 500px -18px;
+          background-size: 250px 150px;
+        }
+      }
+      
+  
+      .kuhl{
+        margin-top: 5px;
+        width: 88%;
+      }
+      .whatsapp {
+        width: 60px;
+        height: 60px;
+        position: fixed;
+        margin: auto;
+        left: 30px;
+        right: auto;
+        bottom: 80px;
+        text-align: center;
+        line-height: 120px;
+        font-family: sans-serif;
+        color: #ffffff;
+        font-size: 16px;
+        border-radius: 25px;
+        z-index: 10000;
+      }
+      
+      .whatsapp span {
+        z-index: 3;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: -36px;
+      }
+      
+      .whatsapp-bg {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border-radius: 25px;
+        z-index: 2;
+        animation: wave 1s ease-out forwards paused;
+
+      }
+     
+      .drops {
+        -webkit-filter: url('#liquid');
+        filter: url('#liquid');
+        position:absolute;
+        top:0;
+        left:0;
+        bottom:0;
+        right:0;
+        z-index: 1;
+        opacity: 0;
+        animation: fade-in .1s linear .4s forwards;
+      }
+      
+      .drop1 , .drop2 {
+        width: 21px;
+        height: 24px;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        background-color: #d301ff
+      }
+      
+      .drop1 {
+        width: 50%;
+        height: 16px;
+        bottom: 10px;
+        border-radius: 0;
+      }
+      
+      .drop2 {
+        animation: drop 1.3s cubic-bezier(1,.19,.66,.12) .5s infinite paused;
+        animation-fill-mode: forwards;
+      }
+      .whatsapp:hover .drop2{
+        animation: drop 1.3s cubic-bezier(1,.19,.66,.12) .5s infinite running !important;
+      }
+      /*=============================================
+	=    		Login		      =
+=============================================*/
+@property --degree {
+  syntax: '<angle>';
+  initial-value:0deg;
+  inherits: false;
+}
+.box{
+    position: relative;
+    width: 450px;
+    height: 500px;
+    background:repeating-conic-gradient(from var(--degree), #3bebff 0%,#3bebff 5%,transparent 5%,transparent 40%,#3bebff9f 50%);
+    filter: drop-shadow(0px 15px 50px #000);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotate 4s linear infinite;
+    transition: .5s;
+}
+/* .box:hover{
+    width: 450px;
+    height: 500px;
+} */
+@keyframes rotate
+{
+    0%{
+      --degree:0deg;
+    }
+    100%{
+        --degree:360deg;
+
+    }
+}
+.box::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:repeating-conic-gradient(from var(--degree), #c03cf9 0%,#c03cf9 5%,transparent 5%,transparent 40%,#c03cf9 50%);
+    filter: drop-shadow(0px 15px 50px #000);
+    border-radius: 20px;
+    animation: rotate 4s linear infinite;
+    animation-delay: -1s;
+}
+.box::after{
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background-color: #131428;
+    border-radius: 15px;
+    border: 8px solid #131428;
+}
+.box .login{
+    position: absolute;
+    inset: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    box-shadow:  inset 0 10px 20px rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    transition: .5s;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* .box:hover .login{
+    inset: 40px;
+} */
+.loginBx {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 70%;
+    transition: .5s;
+    transform: translateY(0);
+    transition: .5s;
+}
+/* .box:hover .loginBx{
+    transform: translateY(0);
+} */
+.loginBx h2{
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .1em;
+}
+.loginBx i{
+    font-size: 25px;
+    color: #d400ff;
+    text-shadow:  0 0 5px #d400ff,
+    0 0 25px #d400ff;
+}
+.loginBx i:nth-child(1){
+    margin-inline-start: 10px;
+}
+.loginBx input {
+    width: 100%;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    font-size: 1em;
+    color: #fff;
+    background: rgba(0,0,0,0.1);
+    border: 2px solid #fff;
+    border-radius: 30px;
+}
+.loginBx input::placeholder {
+    color: #999;
+}
+.loginBx input[type="submit"]{
+    background :#3bebff;
+    border: none;
+    font-weight: 500;
+    color: #111;
+    cursor :pointer;
+    transition: 0.5s;
+}
+.loginBx input[type="submit"]:hover{
+    box-shadow: 0 0 10px #3bebff,
+    0 0 60px #3bebff;
+}
+.login .group {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.login .group a{
+    color: #fff;
+    text-decoration: none;
+}
+.login .group a:nth-child(2){
+    color: #d400ff;
+    font-weight: bold;
+}
