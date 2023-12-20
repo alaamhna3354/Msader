@@ -3,6 +3,31 @@
     direction: rtl;
     font-family: 'Cairo', sans-serif !important;
 }
+.swiper {
+  width: 100%;
+  height: 100px;
+}
+
+#btn-hide-order{
+  display: none;
+margin-top: 25px;
+}
+#btn-hide-order.show{
+  display: block !important;
+}
+
+#show-products{
+  display: none;
+}
+#show-products.show{
+  display: block;
+}
+#show-orders{
+  display: none;
+}
+#show-orders.show{
+  display: block;
+}
 /*=============================================
 	=    		 sidebar			      =
 =============================================*/
@@ -323,7 +348,7 @@ header .logo::after {
         position: absolute;
         width: 100%;
         left: 0;
-        top: -36px;
+        top: -30px;
       }
       
       .whatsapp-bg {
@@ -518,4 +543,286 @@ header .logo::after {
 .login .group a:nth-child(2){
     color: #d400ff;
     font-weight: bold;
+}
+
+      /*=============================================
+	=    		card game		      =
+=============================================*/
+
+:root {
+  --card-height: 300px;
+  --card-width: calc(var(--card-height) / 1.5);
+}
+.card-game {
+  width: var(--card-width);
+  height: var(--card-height);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 36px;
+  perspective: 2500px;
+  margin: 0 50px;
+  cursor: pointer;
+}
+
+.card-game .cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-game .wrapper {
+  transition: all 0.5s;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.card-game:hover .wrapper {
+  transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.card-game .wrapper::before,
+.card-game .wrapper::after {
+  content: "";
+  opacity: 0;
+  width: 100%;
+  height: 80px;
+  transition: all 0.5s;
+  position: absolute;
+  left: 0;
+}
+.card-game .wrapper::before {
+  top: 0;
+  height: 100%;
+  background-image: linear-gradient(
+    to top,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+.card-game .wrapper::after {
+  bottom: 0;
+  opacity: 1;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+
+.card-game:hover .wrapper::before,
+.card-game .wrapper::after {
+  opacity: 1;
+}
+
+.card-game:hover .wrapper::after {
+  height: 120px;
+}
+.title {
+  width: 100%;
+  transition: transform 0.5s;
+}
+.card-game:hover .title {
+  transform: translate3d(0%, -50px, 100px);
+}
+
+.card-game .character {
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  z-index: -1;
+}
+
+.card-game:hover .character {
+  opacity: 1;
+  transform: translate3d(0%, -30%, 100px);
+}
+.orders-item{
+  cursor: pointer;
+  position: relative;
+  transition: .5s;
+}
+.order-form .top-collection-item{
+  position: relative;
+  overflow: hidden;
+}
+.order-form .create-item-form,.order-form .collection-item-thumb,.order-form .collection-item-top{
+  position: relative;
+  z-index: 2;
+}
+
+.water {
+  margin: auto;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  background-color: #d93afc;
+  box-shadow: inset 0 0 50px #1c637c;
+  clip-path: polygon(-35px 2px, 110.50% 3px, 109.99% 116.99%, -16.99% 115.99%);
+  bottom: 2px;
+  z-index: 1;
+  left: 0;
+}
+.water.active{
+  animation: anim1 10s linear forwards ;
+}
+.water::before {
+  content: "";
+  width: 200%;
+  height: 200%;
+  background-color: #1d19330e;
+  position: absolute;
+  top: -150%;
+  left: -50%;
+  border-radius: 40%;
+  animation: anim 12s linear infinite;
+  z-index: 1;
+}
+
+.water::after {
+  content: "";
+  width: 204%;
+  height: 204%;
+  background-color: #1d19330e;
+  position: absolute;
+  top: -150%;
+  left: -52%;
+  border-radius: 40%;
+  animation: anim 12s linear infinite;
+  animation-delay: 0.5s;
+  z-index: 1;
+}
+
+@keyframes anim1 {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+@keyframes anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.btn-form-order {
+  position: relative;
+  padding: 10px 20px;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 200px;
+  overflow: hidden;
+  border-radius: 40px;
+  text-align: center;
+  border: 2px solid #070b24;
+}
+
+.btn-form-order span {
+  position: relative;
+  color: #fff;
+  font-size: 20px;
+  font-family: Arial;
+  letter-spacing: 1px;
+  z-index: 1;
+}
+
+.btn-form-order .liquid {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  background: #d400ff;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);
+  transition: .5s;
+}
+
+.btn-form-order .liquid::after,
+.btn-form-order .liquid::before {
+  content: '';
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  background: #1d1933;
+}
+
+.btn-form-order .liquid::before {
+  
+  border-radius: 45%;
+  background: #1d1933;
+  animation: animate 5s linear infinite;
+}
+
+.btn-form-order .liquid::after {
+  
+  border-radius: 40%;
+  background: #1d1933;
+  animation: animate 10s linear infinite;
+}
+
+.btn-form-order:hover .liquid{
+  top: -120px;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+      /*=============================================
+	=    		blog page		      =
+=============================================*/
+
+.blog-item{
+  border: 2px solid transparent;
+    border-image-outset: 0;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    border-image: linear-gradient(125deg, #FFE53B 0%, #FF2525 37%, #fd00ff 100%);
+    border-image-slice: 1;
+    padding: 20px;
+    background-color: transparent;
+    box-shadow: 0 0 10px rgba(3,0,16,.2);
+    border-radius: 5px;
+}
+.blog-item .nft-thumb{
+margin-bottom: 30px;
+}
+.blog-item .author-details h4 a:hover{
+  color: #d400ff;
+}
+.blog-item .meta-info p{
+  margin-inline-end: 20px;
+}
+.blog-item .meta-info i{
+  color: #9900ff;
+  margin-inline-end: 5px;
+}
+.blog-item .meta-info span{
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
 }

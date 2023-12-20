@@ -3,23 +3,56 @@
 		/*=============================================
 	=    		 	product set price		      =
 =============================================*/
+	$(".btn-order").on('click', function () {
+		$('#btn-hide-order').addClass("show");
+		$("#show-products").hide(1000);
+		$("#show-orders").show(1000);
+	});
+	// 
+	$("#btn-hide-order").on('click', function () {
+		$('#btn-hide-order').removeClass("show");
+		$("#show-orders").hide(1000);
+		$("#show-products").show(1000);
+	});
+	$(".order-form .btn-form-order").on("click", function(){
+		$(this).parent().parent().parent().parent().children('.water').addClass("active");
+	});
+	$(".orders-item .bid").on("click", function(){
+		$(".orders-item .bid").not(this).parent().parent().parent().parent().parent().parent().parent().hide("slow");
+		setTimeout(() => {
+		$(this).parent().parent().parent().parent().parent().parent().parent().removeAttr('class');
+	 	$(this).parent().parent().parent().parent().parent().parent().parent().addClass("orders-item");
+	  	$(this).parent().parent().parent().parent().parent().parent().parent().addClass("col-6");
+	  	$(this).parent().parent().parent().parent().parent().parent().parent().addClass("col-sm-6");
+		}, 500);
+	});
+	$(".orders-item .Prev").on("click", function(){
+	  $(".orders-item .water").removeClass("active");
+	  $(".orders-item .bid").not(this).parent().parent().parent().parent().parent().parent().parent().show("slow");
+	  $(this).parent().parent().parent().parent().parent().parent().parent().removeAttr('class');
+	  $(this).parent().parent().parent().parent().parent().parent().parent().addClass("orders-item");
+	  $(this).parent().parent().parent().parent().parent().parent().parent().addClass("col-sm-6");
+	  $(this).parent().parent().parent().parent().parent().parent().parent().addClass("col-lg-4");
+	  $(this).parent().parent().parent().parent().parent().parent().parent().addClass("col-xl-3");
+	});
+	
 // $(".inner-explore-products .top-collection-item li").on('click', function () {
 // 	var target = $(this).attr('value');
 // 	$('.inner-explore-products .top-collection-item .price').html(target);
 //   });
-$(".top-collection-item").on('click', function () {
-	var price = $(this).find(".price");
-	var Max = $(this).find(".Max");
-	var Min = $(this).find(".Min");
-	$(this).find("li").on('click', function () {
-	var target_value = $(this).attr('value');
-	var target_max = $(this).attr('max');
-	var target_min = $(this).attr('min');
-	price.html(target_value);
-	Max.html(target_max);
-	Min.html(target_min);
-});
-});
+// $(".top-collection-item").on('click', function () {
+// 	var price = $(this).find(".price");
+// 	var Max = $(this).find(".Max");
+// 	var Min = $(this).find(".Min");
+// 	$(this).find("li").on('click', function () {
+// 	var target_value = $(this).attr('value');
+// 	var target_max = $(this).attr('max');
+// 	var target_min = $(this).attr('min');
+// 	price.html(target_value);
+// 	Max.html(target_max);
+// 	Min.html(target_min);
+// });
+// });
 	/*=============================================
 	=    		 	video-btn		      =
 =============================================*/
@@ -32,30 +65,15 @@ $(".top-collection-item").on('click', function () {
 /*=============================================
 	=    		 sidebar			      =
 =============================================*/
-	$("#sidebar-btn").on('click', function () {
-		
-		$("#sidebar").toggleClass( "open" );
-		$(".overlay").toggleClass( "open" );
+	$("#sidebar").hover(function(){
+		$("#sidebar").addClass( "open" );
+		$(".overlay").addClass( "open" );
 	  });
-	  $(".overlay").on('click', function () {
+	 
+	  $(".overlay").hover(function(){
 		
-		$("#sidebar").toggleClass( "open" );
-		$(".overlay").toggleClass( "open" );
-	  });
-	  $("#sidebar li").on('click', function () {
-		if ($("#sidebar").hasClass("open")) {
-			$("#sidebar li").removeClass( "active" );
-			$(this).addClass( "active" );
-		  }
-		  else{
-		$("#sidebar").toggleClass( "open" );
-		$("#sidebar li").removeClass( "active" );
-		$(this).addClass( "active" );
-		$(".overlay").toggleClass( "open" );
-		  }
-
-		
-	
+		$("#sidebar").removeClass( "open" );
+		$(".overlay").removeClass( "open" );
 	  });
 	  
 /*=============================================
