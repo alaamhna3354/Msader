@@ -1,21 +1,35 @@
 (function ($) {
 	"use strict";
+	
 		/*=============================================
 	=    		 	product set price		      =
 =============================================*/
 	$(".btn-order").on('click', function () {
 		$('#btn-hide-order').addClass("show");
-		$("#show-products").hide(1000);
-		$("#show-orders").show(1000);
+		$("#show-products").hide(500);
+		$("#show-orders").show(500);
 	});
 	// 
 	$("#btn-hide-order").on('click', function () {
 		$('#btn-hide-order').removeClass("show");
-		$("#show-orders").hide(1000);
-		$("#show-products").show(1000);
+		$("#show-orders").hide(500);
+		$("#show-products").show(500);
 	});
-	$(".order-form .btn-form-order").on("click", function(){
-		$(this).parent().parent().parent().parent().children('.water').addClass("active");
+	$(".order-form .btn-form-order").on("click", function(event){
+		event.preventDefault();
+		setTimeout(() => {
+		$(this).parent().parent().parent().parent().parent().children('.water').addClass("active");
+		$(this).addClass("disabel");
+	}, 500);
+	setTimeout(() => {
+		$(this).parent().parent().parent().parent().parent().children('.water').removeClass("active");
+		$(this).removeClass("disabel");
+		$('.alert-success').show(1000);
+		setTimeout(() => {
+			$('.alert-success').hide(1000)
+		}, 5000);
+	}, 8000);
+	
 	});
 	$(".orders-item .bid").on("click", function(){
 		$(".orders-item .bid").not(this).parent().parent().parent().parent().parent().parent().parent().hide("slow");
@@ -35,6 +49,13 @@
 	  $(this).parent().parent().parent().parent().parent().parent().parent().addClass("col-lg-4");
 	  $(this).parent().parent().parent().parent().parent().parent().parent().addClass("col-xl-3");
 	});
+	$(".order-form .qty").on("input", function(){
+		var value_qty = $(this).val();
+		const old_price = $(this).parent().parent().parent().find('.main-price').data('price');
+		$(this).parent().parent().parent().find('.main-price').html()
+		$(this).parent().parent().parent().parent().find('.main-price').html((old_price * value_qty).toFixed(3));
+		
+	  });
 	
 // $(".inner-explore-products .top-collection-item li").on('click', function () {
 // 	var target = $(this).attr('value');
@@ -222,10 +243,6 @@ function toggleFullscreen(elem) {
 		}
 	}
 }
-document.getElementById('btnFullscreen').addEventListener('click', function () {
-	toggleFullscreen();
-});
-
 
 /*=============================================
 	=    		Collection Active		   =

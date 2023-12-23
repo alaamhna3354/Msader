@@ -27,14 +27,16 @@
         <!-- Arabic Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Bitter:ital@1&family=Cairo:wght@500&family=Ruwudu:wght@500&display=swap" rel="stylesheet">
-        
-    </head>
+        <link href="https://fonts.googleapis.com/css2?family=Bitter:ital@1&family=Cairo:wght@500&family=Ruwudu:wght@500&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="assets/package/swiper-bundle.min.css">
+</head>
     <body class="rtl">
         <!-- whatsapp -->
         <a href="https://wa.me/" target="_blank" class="whatsapp">
             <div class="whatsapp-bg">
-            <span><img src="assets/img/icons/whatsapp.png" alt="Flowers in Chania" class="kuhl"></span>
+            <span>
+                <i class="fab fa-whatsapp"></i>
+            </span>
             </div>
             <div class="drops">
               <div class="drop1"></div>
@@ -100,7 +102,7 @@
         <div class="overlay"></div>
         <!-- sidebar -->
         <div id="sidebar" class="sidebar">
-            <div id="sidebar-btn" class="sidebar-logo m-auto mb-2">
+            <div id="sidebar-btn" class="sidebar-logo m-auto">
                <a href="index.html"> <img class="w-50" style="cursor: pointer;" src="assets/img/logo/logo-icon.png" alt=""></a>
             </div>
             <div class="sidebar-icon">
@@ -222,43 +224,48 @@
             <header>
                 <div class="menu-area">
                     <div class="container">
-                        <div class="row">
-                            <div class="col-12">
                                 <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
                                 <div class="menu-wrap">
                                     <nav class="menu-nav">
                                         <div class="logo d-flex d-md-none m-auto"><a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a></div>
-                                        <!-- <div class="header-form">
-                                            <form action="#">
-                                                <button><i class="flaticon-search"></i></button>
-                                                <input type="text" placeholder="Search Artwork">
-                                            </form>
-                                        </div> -->
+                                        
                                         <div class="navbar-wrap main-menu d-none d-lg-flex">
                                             <ul class="navigation">
-                                        
-                                                <li class=" menu-item-has-children">
-                                                    <a href="#">
-                                                        alaamhna3354
-                                                        <i class="fi-sr-user"></i>
-                                                    </a>
-                                                    <ul class="submenu">
-                                                        <li><a href="#"><i class="fi-sr-settings m-1"></i> My Profile</a></li>
-                                                        <li><a href="#"><i class="fi-sr-database m-1"></i> My Referral</a></li>
-                                                        <li><a href="#"><i class="fi-sr-crown m-1"></i> Referral Bonus</a></li>
-                                                        <li><a href="#"><i class="fi-sr-credit-card m-1"></i> Open Ticket</a></li>
-                                                        <li><a href="#"><i class="fi-sr-credit-card m-1"></i> Show Ticket</a></li>
-                                                        <li><a href="#"><i class="fi-sr-key m-1"></i> 2FA Security</a></li>
-                                                        <li><a href="login-register.html"><i class="fi-sr-sign-in-alt m-1"></i> Login & Register</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="active d-none d-lg-flex">
+                                              <li><a href="">الرئيسية</a></li>
+                                              <li><a href="">المقالات</a></li>
+                                              <li><a href="">من نحن</a></li>
+                                              <li><a href="">تواصل معنا </a></li>
+                                             
+                                              <li class="active d-none d-lg-flex">
                                                     <a href="index.html" class="logo m-0"><img src="assets/img/logo/logo.png" alt=""></a>
-                                               </li>
-                                                <li class=""><a href="index.html">
+                                              </li>
+                                              <li class=" menu-item-has-children">
+                                                <a href="#" style="font-size: 20px;">
+                                                    <i class="fi-sr-user"></i>
+                                                </a>
+                                                <ul class="submenu">
+                                                    <li><a href="#"><i class="fi-sr-settings m-1"></i> My Profile</a></li>
+                                                    <li><a href="#"><i class="fi-sr-database m-1"></i> My Referral</a></li>
+                                                    <li><a href="#"><i class="fi-sr-crown m-1"></i> Referral Bonus</a></li>
+                                                    <li><a href="#"><i class="fi-sr-credit-card m-1"></i> Open Ticket</a></li>
+                                                    <li><a href="#"><i class="fi-sr-credit-card m-1"></i> Show Ticket</a></li>
+                                                    <li><a href="#"><i class="fi-sr-key m-1"></i> 2FA Security</a></li>
+                                                    <li><a href="login-register.html"><i class="fi-sr-sign-in-alt m-1"></i> Login & Register</a></li>
+                                                </ul>
+                                            </li>
+                                              <li>
                                                     <i class="fi-sr-bell-ring"></i>
                                                     <strong>0.00</strong>
-                                                </a></li>
+                                              </li>
+                                             
+                                                <li style="width: 220px;">
+                                                    <div class="header-form">
+                                                        <form action="#">
+                                                            <button><i class="flaticon-search"></i></button>
+                                                            <input type="text" placeholder="Search Artwork">
+                                                        </form>
+                                                    </div>
+                                                </li>
                                             </ul>
                                         </div>
                                         <div class="header-action d-none d-md-block">
@@ -290,8 +297,6 @@
                                 </div>
                                 <div class="menu-backdrop"></div>
                                 <!-- End Mobile Menu -->
-                            </div>
-                        </div>
                     </div>
                 </div>
             </header>
@@ -308,7 +313,7 @@
                     <div class="banner-area">
                         <div class="container">
                             <div class="row">
-                                <div class="col-sm-6 text-center eyes">
+                                <div class="col-sm-6 text-center">
                                     <div class="banner-content">
                                         <h2 class="title">
                                             طابت بروض الحياة كل <br> <span>مصادر</span></h2>
@@ -316,7 +321,7 @@
                                         <!-- <a href="login-register.html" class="banner-btn">Let’s get started <i class="fi-sr-arrow-right"></i></a> -->
                                     </div>
                                 </div>
-                                <div class="col-sm-6 text-center eyes">
+                                <div class="col-sm-6 text-center">
                                     <div class="video-btn-element" id="video-btn-element">
                                         <img class="video-btn" src="assets/img/others/video-btn.png" alt="">
                                         <i class="fi-sr-play"></i>
@@ -441,7 +446,7 @@
                     <div class="col-lg-12">
                         <div class="section-title mb-45">
                             <h2 class="title">
-                                <img width="50" src="assets/img/icons/exilir.png" alt="">
+                                <img width="100" src="assets/img/icons/trophy.png" alt="">
                                 الاحصائيات  
                         </h2>
                         </div>
@@ -705,91 +710,6 @@
         <script src="assets/js/wow.min.js"></script>
         <script src="assets/js/plugins.js"></script>
         <script src="assets/js/main.js"></script>
-        <!-- <script>
-            window.requestAnimFrame = (function() {
-  return window.requestAnimationFrame ||
-    window.webkitRequestAnimationFrame ||
-    window.mozRequestAnimationFrame ||
-    window.oRequestAnimationFrame ||
-    window.msRequestAnimationFrame ||
-    function(callback) {
-      window.setTimeout(callback, 1000 / 60);
-    };
-})();
-var c = document.getElementById('canv');
-var $ = c.getContext('2d');
-var w = c.width = window.innerWidth;
-var h = c.height = window.innerHeight;
-var _w = w * 0.5;
-var _h = h * 0.5;
-var arr = [];
-var cnt = 0;
-
-window.addEventListener('load', resize);
-window.addEventListener('resize', resize, false);
-
-function resize() {
-  c.width = w = window.innerWidth;
-  c.height = h = window.innerHeight;
-  c.style.position = 'absolute';
-  c.style.left = (window.innerWidth - w) *
-    .01 + 'px';
-  c.style.top = (window.innerHeight - h) *
-    .01 + 'px';
-}
-
-function anim() {
-  cnt++;
-  if (cnt % 6) draw();
-  window.requestAnimFrame(anim);
-}
-anim();
-
-function draw() {
-
-  var splot = {
-    x: rng(_w - 900, _w + 900),
-    y: rng(_h - 900, _h + 900),
-    r: rng(20, 80),
-    spX: rng(-1, 1),
-    spY: rng(-1, 1)
-  };
-
-  arr.push(splot);
-  while (arr.length > 100) {
-    arr.shift();
-  }
-  $.clearRect(0, 0, w, h);
-
-  for (var i = 0; i < arr.length; i++) {
-
-    splot = arr[i];;
-    $.fillStyle = rndCol();
-    $.beginPath();
-    $.arc(splot.x, splot.y, splot.r, 0, Math.PI * 2, true);
-    $.shadowBlur = 80;
-    $.shadowOffsetX = 2;
-    $.shadowOffsetY = 2;
-    $.shadowColor = rndCol();
-    $.globalCompositeOperation = 'lighter';
-    $.fill();
-
-    splot.x = splot.x + splot.spX;
-    splot.y = splot.y + splot.spY;
-    splot.r = splot.r * 0.96;
-  }
-}
-
-function rndCol() {
-  var r = Math.floor(Math.random() * 114);
-  var g = Math.floor(Math.random() * 68);
-  var b = Math.floor(Math.random() * 239);
-  return "rgb(" + r + "," + g + "," + b + ")";
-}
-
-function rng(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-        </script> -->
+        <script src="assets/package/swiper-bundle.min.js"></script>
     </body>
 </html>

@@ -22,13 +22,13 @@
     padding: 40px 20px;
 }
 .sidebar.open {
-    width: 18%;
+    width: 20%;
 }
 .main-content {
     padding-inline-start: 95px;
 }
 .header-form {
-    width: 300px;
+    width: 250px;
     margin-left: 35px;
     padding-left: 35px;
 }
@@ -114,6 +114,9 @@
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (max-width: 1199.98px) {
+    .sidebar.open {
+        width: 100%;
+    }
 .custom-container,
 .container {
     max-width: 960px;
