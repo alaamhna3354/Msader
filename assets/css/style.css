@@ -4150,7 +4150,7 @@ label {
 }
 
 /* 21. Preloader */
-#preloader{
+/* #preloader{
 	background-color: var(--section-background-color);
 	height: 100%;
 	width: 100%;
@@ -4159,7 +4159,7 @@ label {
 	margin-top: 0px;
 	top: 0px;
 	z-index: 99999;
-}
+} */
 #loading-center {
 	width: 100%;
 	height: 100%;

@@ -388,7 +388,7 @@ header .logo::after {
   }
   .ticker-wrap {
     position: absolute;
-    bottom: 30px;
+    bottom: 60px;
     width: 100%;
     overflow: hidden;
     height: 4rem;
@@ -419,7 +419,7 @@ header .logo::after {
     .ticker-wrap2 {
         background-color: #6845ee; 
         transform: rotateZ(3deg);
-        bottom: 104px;
+        bottom: 110px;
       }
       .ticker-wrap2 .ticker {
         -webkit-animation-iteration-count: infinite; 
@@ -514,7 +514,7 @@ header .logo::after {
         top: -30px;
       }
       .whatsapp span i{
-       font-size: 30px;
+       font-size: 35px;
        background-color: #d300ff;
        border-radius: 50%;
        padding: 10px;
@@ -566,7 +566,7 @@ header .logo::after {
       }
       
       .drop2 {
-        animation: drop 1.3s cubic-bezier(1,.19,.66,.12) .5s infinite running;
+        animation: drop 1.8s cubic-bezier(1,.19,.66,.12) .5s infinite running;
         animation-fill-mode: forwards;
       }
      
@@ -1029,3 +1029,412 @@ margin-bottom: 30px;
   font-size: 14px;
   font-weight: 400;
 }
+      /*=============================================
+	=    		Home page		      =
+=============================================*/
+.uniq-title {
+  display: grid;
+  place-content: center;
+  font-family: "Oswald", sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color:  hsl(0, 0%, 100%);
+  margin-bottom: 10px;
+}
+
+.uniq-title > div {
+  grid-area: 1/1/-1/-1;
+}
+.uniq-title .top {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 48%, 0% 58%);
+  color: #42d9d6;
+}
+.uniq-title .bottom {
+  clip-path: polygon(0% 60%, 100% 50%, 100% 100%, 0% 100%);
+  color: #6845ee;
+  background: -webkit-linear-gradient(177deg, black 53%,  hsl(0, 0%, 100%) 65%);
+  background: linear-gradient(177deg, black 53%,  hsl(0, 0%, 100%) 65%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  transform: translateX(-0.02em);
+}
+.search-input{
+  width: 220px !important;
+}
+.home-page .search-input{
+  width: 250px !important;
+
+}
+.slider { 
+  overflow: hidden;
+  background-image: url(../img/bg/bg3.jpg);
+    background-size: cover;
+    background-position: top center;
+}
+.slider .content-left{
+  display: grid;
+  align-content: center;
+  justify-content: start;
+}
+ 
+@media (max-width: 767.98px) {
+  .slider { 
+    height: 800px;
+  }
+  .slider .content-left{
+    justify-content: center;
+  }
+}
+.slider .swiper{
+  height: 100%;
+}
+.slider .swiper .swiper-slide{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider .image img{
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+} 
+      /*=============================================
+	=    		Home page Testimonial		      =
+=============================================*/
+.testimonial{
+  padding: 50px 0;
+  overflow: hidden;
+}
+
+
+.testimonial figure.figure-card {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px auto;
+  min-width: 220px;
+  max-width: 310px;
+  width: 100%;
+  color: #fff;
+  text-align: left;
+  box-shadow: none !important;
+}
+.testimonial figure.figure-card * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+  transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+}
+.testimonial figure.figure-card img {
+  max-width: 100%;
+  vertical-align: middle;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  margin: 40px 0 0 10px;
+}
+.testimonial figure.figure-card blockquote {
+  display: block;
+  border-radius: 8px;
+  position: relative;
+  background-color: #12112b;
+  padding: 25px 50px 30px 50px;
+  font-size: 0.9em;
+  font-weight: 501;
+  margin: 0;
+  line-height: 1.6em;
+  font-style: italic;
+  letter-spacing: 1px;
+  text-align: start;
+}
+.testimonial figure.figure-card blockquote:before,
+.testimonial figure.figure-card blockquote:after {
+  font-family: 'FontAwesome';
+  content: "\201C";
+  position: absolute;
+  font-size: 50px;
+  opacity: 0.3;
+  font-style: normal;
+}
+.testimonial figure.figure-card blockquote:before {
+  top: 25px;
+  left: 20px;
+}
+.testimonial figure.figure-card blockquote:after {
+  content: "\201D";
+  right: 20px;
+  bottom: 0;
+}
+.testimonial figure.figure-card .arrow {
+  top: 100%;
+  width: 0;
+  height: 0;
+  border-left: 0 solid transparent;
+  border-right: 25px solid transparent;
+  border-top: 25px solid #12112b;
+  margin: 0;
+  position: absolute;
+}
+.testimonial figure.figure-card .author {
+  position: absolute;
+  bottom: 45px;
+  padding: 0 10px 0 120px;
+  margin: 0;
+  text-transform: uppercase;
+  color: #ffffff;
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
+}
+.testimonial figure.figure-card .author h5 {
+  opacity: 0.8;
+  margin: 0;
+  font-weight: 800;
+}
+.testimonial figure.figure-card .author h5 span {
+  font-weight: 400;
+  text-transform: none;
+  padding-left: 5px;
+}
+/* --------------------------------------------------
+   loader
+   -------------------------------------------------- */
+   #preloader {
+    background-color: #070b24;
+    background-color: #070b24;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 88888888;
+    top: 0;
+    right: 0;
+   }
+   #preloader ul{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    margin:0;
+    padding:0;
+    display:flex;
+    
+  }
+  #preloader ul li{
+    list-style:none;
+    width:40px;
+    height:40px;
+    background:#fff;
+    border-radius:50%;
+    animation:grow 1.6s ease-in-out infinite;
+  }
+    @keyframes grow
+    {
+      0% , 40% , 100%
+      {
+        transform:scale(0.2);
+      }
+      20%{
+         transform:scale(1);
+  
+      }
+    }
+  
+    #preloader ul li:nth-child(1){
+    animation-delay:-1.4s;
+    background:#ffff00;
+    box-shadow:0 0 50px #ffff00;
+    
+  }
+  #preloader ul li:nth-child(2){
+    animation-delay:-1.2s;
+    background:#76ff03;
+    box-shadow:0 0 50px #76ff03;
+    
+  }
+  #preloader ul li:nth-child(3){
+    animation-delay:-1s;
+    background:#f06292;
+    box-shadow:0 0 50px #f06292;
+    
+  }
+  #preloader ul li:nth-child(4){
+    animation-delay:-0.8s;
+    background:#4fc3f7;
+    box-shadow:0 0 50px #4fc3f7;
+    
+  }
+  #preloader ul li:nth-child(5){
+    animation-delay:-0.6s;
+    background:#ba68c8;
+    box-shadow:0 0 50px #ba68c8;
+    
+  }
+  #preloader ul li:nth-child(6){
+    animation-delay:-0.4s;
+    background:#f57c00;
+    box-shadow:0 0 50px #f57c00;
+    
+  }
+  #preloader ul li:nth-child(7){
+    animation-delay:-0.2s;
+    background:#673ab7;
+    box-shadow:0 0 50px #673ab7;
+    
+  }
+  /* --------------------------------------------------
+    	Home Services Card
+   -------------------------------------------------- */
+   .services{
+    background-color: #12112b;
+    padding: 50px 0;
+   }
+  .gradient-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    padding: 30px;
+    overflow: hidden;
+    @media screen and (max-width: 991px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .gradient-cards .container-title {
+    text-align: center;
+    padding: 0 !important;
+    margin-bottom: 40px;
+    font-size: 40px;
+    color: #fff;
+    font-weight: 600;
+    line-height: 60px;
+  }
+  
+  .gradient-cards .card {
+    max-width: 550px;
+    border: 0;
+    width: 100%;
+    margin-inline: auto;
+    background-color: transparent;
+  }
+  
+  .gradient-cards .container-card {
+    position: relative;
+    border: 2px solid transparent;
+    background: linear-gradient(71deg, #12112b, #2a3352, #12112b);
+    background-clip: padding-box;
+    border-radius: 45px;
+    padding: 20px 40px;
+    img {
+      margin-bottom: 32px;
+    }
+  } 
+  .gradient-cards .card-title {
+    font-weight: 600;
+    color: white;
+    letter-spacing: -0.02em;
+    line-height: 40px;
+    font-style: normal;
+    font-size: 22px;
+    padding-bottom: 8px;
+  }
+  
+  .gradient-cards .card-description {
+    font-weight: 600;
+    line-height: 32px;
+    color: hsla(0, 0%, 100%, 0.5);
+    font-size: 16px;
+    max-width: 470px;
+  }
+  /* --------------------------------------------------
+    	Home News Card
+   -------------------------------------------------- */
+   .news{
+    overflow: hidden;
+    padding: 50px 0;
+   }
+   .news .post {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    position: relative;
+ }
+ .news .post:hover .header_post {
+    margin-top: -20px;
+ }
+ .news .post:hover .body_post {
+    height: 55%;
+ }
+ .news .post:hover img {
+    transform: translatey(-10px) translatex(-5px) scale(1.05);
+ }
+ .news .post .header_post {
+    width: 100%;
+    height: 40%;
+    background: #ddd;
+    position: absolute;
+    top: 0;
+    -webkit-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+    -moz-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+    -ms-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+    -o-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+    transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+ }
+ .news .post .header_post img {
+    max-width: 100%;
+    height: auto;
+    transition: ease-in-out 600ms;
+ }
+ .news .post .body_post {
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(71deg, #12112b, #2a3352, #12112b);
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+    -moz-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+    -ms-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+    -o-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+    transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+    cursor: pointer;
+ }
+ .news .post .body_post .post_content {
+    width: 80%;
+    height: 80%;
+    position: relative;
+ }
+ .news .post .body_post .post_content h1 {
+    font-size: 20px;
+    font-weight: bold;
+ }
+ .news .post .body_post .post_content p {
+    font-size: 14px;
+    font-weight: normal;
+    color: #fff;
+    letter-spacing: 1px;
+    line-height: 1.8;
+ }
+ /* --------------------------------------------------
+    	Home Page Video
+   -------------------------------------------------- */
+ #video-content{
+  min-width: 100%; 
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
+ }
+ #video-content video{
+  min-width: 100%; 
+  min-height: 100%;
+ }
+ #video-content #video-btn-element{
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%,-50%);
+  z-index: 100;
+ }
