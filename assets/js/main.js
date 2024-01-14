@@ -33,12 +33,12 @@
 	});
 	$(".orders-item .bid").on("click", function(){
 		$(".orders-item .bid").not(this).parent().parent().parent().parent().parent().parent().parent().hide("slow");
-		// setTimeout(() => {
-		// $(this).parent().parent().parent().parent().parent().parent().parent().removeAttr('class');
-	 	// $(this).parent().parent().parent().parent().parent().parent().parent().addClass("orders-item");
-	  	// $(this).parent().parent().parent().parent().parent().parent().parent().addClass("col-6");
-	  	// $(this).parent().parent().parent().parent().parent().parent().parent().addClass("col-sm-6");
-		// }, 500);
+		setTimeout(() => {
+		$(this).parent().parent().parent().parent().parent().parent().parent().removeAttr('class');
+	 	$(this).parent().parent().parent().parent().parent().parent().parent().addClass("orders-item");
+	  	$(this).parent().parent().parent().parent().parent().parent().parent().addClass("col-12");
+	  	$(this).parent().parent().parent().parent().parent().parent().parent().addClass("col-sm-6");
+		}, 500);
 	});
 	$(".orders-item .Prev").on("click", function(){
 	  $(".orders-item .water").removeClass("active");
